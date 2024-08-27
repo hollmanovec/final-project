@@ -1,0 +1,23 @@
+{% extends "master.html" %}
+
+{% block title %}
+    {{ disc.name }}
+{% endblock %}
+
+
+{% block content %}
+    <div>
+        <h1>{{ disc.name }}</h1>
+        <p><strong>Name:</strong> {{ disc.name }}</p>
+        <p><strong>Type:</strong> {{ disc.type }}</p>
+        <p><strong>Brand:</strong> {{ disc.brand }}</p>
+        <h3>Flight Numbers:</h3>
+        <p><strong>Speed:</strong> {{ disc.speed }}</p>
+        <p><strong>Glide:</strong> {{ disc.glide }}</p>
+        <p><strong>Turn:</strong> {{ disc.turn }}</p>
+        <p><strong>Fade:</strong> {{ disc.fade }}</p>
+        <p><strong>Image:</strong> <img src="{{ disc.image }}" alt="Disc image">{{ disc.image }}</p>
+
+
+    </div>
+{% endblock %}
