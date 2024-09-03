@@ -6,6 +6,10 @@
 
 
 {% block content %}
+    <h5>
+    <a href="{% url 'disc_list' %}">Back to the List of Discs</a>
+    </h5>
+
     <div>
         <h1>{{ disc.name }}</h1>
         <p><strong>Name:</strong> {{ disc.name }}</p>
@@ -36,8 +40,6 @@
             <a href="{% url 'disc_delete' object.pk %}">Delete disc</a>
 
         {% endif %}
-        <p>
-        <a href="{% url 'disc_list' %}">Back to the List of Discs</a>
-        </p>
+
     </div>
 {% endblock %}
