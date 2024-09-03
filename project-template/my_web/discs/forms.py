@@ -19,7 +19,19 @@ class DiscForm(forms.ModelForm):
 
 class DiscSearchForm(forms.Form):
     disc_name = forms.CharField(
+        required=False,
         label='Disc name',
         max_length=100,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Search for a disc'})
+    )
+    type = forms.ChoiceField(
+        required=False,
+        choices=[
+            ('', 'Any Type'),
+            ('Distance Driver', 'Distance Driver'),
+            ('Fairway Driver', 'Fairway Driver'),
+            ('Mid-Range', 'Mid-Range'),
+            ('Putter', 'Putter')
+        ],
+        widget=forms.Select(attrs={'class': 'form-control'})
     )

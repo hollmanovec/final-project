@@ -47,7 +47,8 @@ def search_disc(request):
         form = DiscSearchForm(request.POST)
         if form.is_valid():
             disc_name = form.cleaned_data['disc_name']
-            object_list = Disc.objects.filter(name__icontains=disc_name)
+            type = form.cleaned_data['type']
+            object_list = Disc.objects.filter(name__icontains=disc_name, type__icontains=type)
             return render(request, 'search_disc_list.html', {'form': form, 'object_list': object_list})
     else:
         form = DiscSearchForm()

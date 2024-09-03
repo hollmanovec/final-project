@@ -1,0 +1,20 @@
+body {
+    background-color: #99ff99;
+}
+
+.nav-item {
+    padding-right: 5px;
+}
+
+nav {
+    background-color: #99ff66;
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+}
+
+div {
+    margin-down: 40px;
+}

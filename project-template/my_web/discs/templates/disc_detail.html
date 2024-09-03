@@ -23,6 +23,7 @@
             <p>No image available.</p>
         {% endif %}
     </div>
+    <p></p>
     <div>
         {% if user.is_authenticated %}
 
@@ -35,9 +36,8 @@
             <a href="{% url 'disc_delete' object.pk %}">Delete disc</a>
 
         {% endif %}
-        <p></p>
-        <p></p>
+        <p>
         <a href="{% url 'disc_list' %}">Back to the List of Discs</a>
-
+        </p>
     </div>
 {% endblock %}
