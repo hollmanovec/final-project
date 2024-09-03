@@ -1,7 +1,7 @@
 {% extends "master.html" %}
 
 {% block title %}
-  BookList
+  List of Discs
 {% endblock %}
 
 {% block content %}
@@ -9,9 +9,9 @@
     <h4><a href="{% url 'add_disc' %}">Add your disc</a></h4>
     <ul>
         {% for disc in discs %}
-            <li><a href="{% url 'disc_detail' disc.pk %}">{{ disc.name }}</a>, {{disc.type}} from {{ disc.brand }}</li>
-        {% empty %}
-            <li>No discs entered.</li>
+            <li>
+                <a href="{% url 'disc_detail' disc.pk %}">{{ disc.name }}</a>, {{disc.type}} from {{ disc.brand }}
+            </li>
         {% endfor %}
     </ul>
 
@@ -20,8 +20,8 @@
   <div class="pagination">
     <span class="step-links">
       {% if page_obj.has_previous %}
-        <a href="?page=1">&laquo; first</a>
-        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        <a href="?page=1">&laquo; First</a>
+        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
       {% endif %}
 
       <span class="current">
@@ -29,8 +29,8 @@
       </span>
 
       {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">next</a>
-        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        <a href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
       {% endif %}
     </span>
   </div>

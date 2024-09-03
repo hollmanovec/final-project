@@ -17,5 +17,9 @@ class DiscForm(forms.ModelForm):
             'image': forms.ClearableFileInput(attrs={'class': 'form-control-file'}),}
 
 
-
-        #TODO disc search form
+class DiscSearchForm(forms.Form):
+    disc_name = forms.CharField(
+        label='Disc name',
+        max_length=100,
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Search for a disc'})
+    )

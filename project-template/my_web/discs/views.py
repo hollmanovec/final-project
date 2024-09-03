@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, DeleteView, UpdateView
 from .models import Disc
-from .forms import DiscForm
+from .forms import DiscForm, DiscSearchForm
 #from .forms import DiscSearchForm
 from django.shortcuts import render
 
@@ -29,3 +29,28 @@ class DiscDetailView(DetailView):
     model = Disc
     template_name = 'disc_detail.html'
 
+
+class DiscDeleteView(DeleteView):
+    model = Disc
+    template_name = 'disc_delete_confirmation.html'
+    success_url = reverse_lazy('disc_detail')
+
+
+class DiscUpdateView(UpdateView):
+    model = Disc
+    form_class = DiscForm
+    template_name = 'add_disc.html'
+    success_url = reverse_lazy('disc_list')
+
+def search_disc(request):
+    if request.method == 'POST':
+        form = DiscSearchForm(request.POST)
+        if form.is_valid():
+            disc_name = form.cleaned_data['disc_name']
+            object_list = Disc.objects.filter(name__icontains=disc_name)
+            return render(request, 'search_disc_list.html', {'form': form, 'object_list': object_list})
+    else:
+        form = DiscSearchForm()
+        object_list = Disc.objects.all()
+
+    return render(request, 'search_disc_list.html', {'form': form, 'object_list': object_list})

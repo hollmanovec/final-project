@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Delete?
+{% endblock %}
+
+
+{% block content %}
+    <h1>Are you sure you want to delete "{{ disc.name }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+    </form>
+    <a href="{% url 'disc_list' %}">Cancel</a>
+{% endblock %}

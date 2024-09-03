@@ -16,8 +16,28 @@
         <p><strong>Glide:</strong> {{ disc.glide }}</p>
         <p><strong>Turn:</strong> {{ disc.turn }}</p>
         <p><strong>Fade:</strong> {{ disc.fade }}</p>
-        <p><strong>Image:</strong> <img src="{{ disc.image }}" alt="Disc image">{{ disc.image }}</p>
 
+        {% if disc.image %}
+            <img src="{{ disc.image.url }}" alt="{{ disc.name }}" class="img-fluid">
+        {% else %}
+            <p>No image available.</p>
+        {% endif %}
+    </div>
+    <div>
+        {% if user.is_authenticated %}
+
+            <a href="{% url 'disc_update' object.pk %}">Edit disc</a>
+
+        {% endif %}
+
+        {% if user.is_authenticated and user.is_superuser %}
+
+            <a href="{% url 'disc_delete' object.pk %}">Delete disc</a>
+
+        {% endif %}
+        <p></p>
+        <p></p>
+        <a href="{% url 'disc_list' %}">Back to the List of Discs</a>
 
     </div>
 {% endblock %}
