@@ -7,10 +7,12 @@
 
 {% block content %}
 <h4><a href="{% url 'disc_list' %}">List of discs</a></h4>
-<h1>{% if object %}Edit Disc{% else %}Add Your Disc{% endif %}</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">{% if object %}Edit{% else %}Add Disc{% endif %}</button>
-    </form>
+<div>
+    <h2>{% if object %}Edit Disc{% else %}Add Your Disc{% endif %}</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">{% if object %}Edit{% else %}Add Disc{% endif %}</button>
+        </form>
+</div>
 {% endblock %}

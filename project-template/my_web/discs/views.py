@@ -10,6 +10,9 @@ from django.shortcuts import render
 
 # Create your views here.
 
+def discs(request):
+    return render(request, "discs.html")
+
 
 class DiscCreateView(CreateView):
     model = Disc
@@ -33,7 +36,7 @@ class DiscDetailView(DetailView):
 class DiscDeleteView(DeleteView):
     model = Disc
     template_name = 'disc_delete_confirmation.html'
-    success_url = reverse_lazy('disc_detail')
+    success_url = reverse_lazy('disc_list')
 
 
 class DiscUpdateView(UpdateView):

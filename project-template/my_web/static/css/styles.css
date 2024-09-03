@@ -1,0 +1,42 @@
+body {
+    background-color: #99ff99;
+
+}
+.content-wrapper {
+    padding: 25px;
+}
+
+div {
+    margin: 10px;
+}
+
+
+.nav-item {
+    padding-right: 5px;
+}
+
+nav {
+    background-color: #99ff66;
+}
+
+footer {
+    padding: 8px;
+    text-align: center;
+
+}
+
+footer a {
+    color:#00cc00;
+}
+
+div a {
+    color:#00cc00;
+}
+
+h5 a {
+    color:#00cc00;
+}
+
+h4 a {
+    color:#00cc00;
+}

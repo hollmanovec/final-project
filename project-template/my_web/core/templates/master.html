@@ -4,6 +4,7 @@
 <html>
 <head>
   <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   {% load bootstrap5 %}
   {% bootstrap_css %}
   {% bootstrap_javascript %}
@@ -13,8 +14,10 @@
 <body>
 {% include 'header.html' %}
 
+<div class="content-wrapper">
 {% block content %}
 {% endblock %}
+</div>
 
 {% include 'footer.html' %}
 </body>

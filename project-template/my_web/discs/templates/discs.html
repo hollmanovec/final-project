@@ -1,0 +1,52 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Discs
+{% endblock %}
+
+
+{% block content %}
+<h2>Discs</h2>
+<h5><a href="{% url 'disc_list' %}">Check out the disc database</a></h5>
+<h5><a href="{% url 'add_disc' %}">Add your disc</a></h5>
+<div>
+    Disc golf discs are the main tools of every player. There are vast amounts of different kinds of discs with several
+    different properties, and on this page we're going to describe the main characteristics.
+</div>
+<div>
+    <h3>Types of discs</h3>
+    <h4>Putter</h4>
+    <h4>Mid-Range</h4>
+    <h4>Fairway Driver</h4>
+    <h4>Distance Driver</h4>
+</div>
+
+<div>
+    <h3>Flight Numbers</h3>
+    <h4>Speed</h4>
+        <p>This is how hard/ fast the disc must be thrown to achieve the ratings indicated on the disc. If a disc has a
+            lot of glide, and is meant to stay in the air, the disc has to be thrown at the speed listed on this disc for
+            it to glide like it’s supposed to. The same goes with the other flight ratings.</p>
+        <p>Generally, a higher speed disc is designed to travel a further distance then a lower speed disc, but will
+            need more skill to achieve this.</p>
+    <h4>Glide</h4>
+        <p>This is how long the disc can stay in the air, if thrown at the correct speed. Low-speed discs with a higher
+            glide rating tend to be easier for new players to achieve longer flights. A disc with a lower glide rating
+            will also be more resistant to the wind. A disc with a high speed and a high glide rating can fly the farthest
+            on the course, as long as the player can throw at the indicated speed level.</p>
+    <h4>Turn</h4>
+        <p>This is how much the disc turns to the right when first thrown (right-handed backhand thrower). Also known as
+            high-speed turn, this rating indicates a discs ability to turn over to the right after the disc is first thrown
+            (right-handed backhand thrower), usually with a fair amount of speed behind the disc. Measured from +1 to -5,
+            a disc with a turn of +1 will fight wind and resist turning over the most, while a disc with a turn of -5 will
+            turn over the most.</p>
+    <h4>Fade</h4>
+        <p>This is how much the disc turns to the left at the end of its flight (right-handed backhand thrower).</p>
+
+        <p>A disc’s low-speed fade is its ability to hook left at the end of the throw. Once a disc has made it through
+            the majority of its flight and begins to slow down, the fade usually kicks in and the disc turns to the left
+            (right-handed backhand thrower). Fade ranges from 0 to 5 and the higher the number, the more the disc will fade.
+            A disc with a fade of 0 will finish the straightest and see the least amount of left movement towards the end
+            of their flight. While a disc with a fade of 5 will see a hard hook to the left at the end.</p>
+</div>
+{% endblock %}

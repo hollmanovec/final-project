@@ -4,6 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('', views.discs, name='discs'),
     path('add/', views.DiscCreateView.as_view(), name='add_disc'),
     path('list/', views.DiscListView.as_view(), name='disc_list'),
     path('<int:pk>/', views.DiscDetailView.as_view(), name='disc_detail'),
