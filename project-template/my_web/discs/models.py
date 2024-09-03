@@ -17,7 +17,7 @@ class Disc(models.Model):
     glide = models.IntegerField(default=1)
     turn = models.IntegerField(default=0)
     fade = models.IntegerField(default=0)
-    image = models.ImageField(default='default_disc.webp', upload_to='disc_images/', null=True, blank=True)
+    image = models.ImageField(default='default_disc.jpg', upload_to='disc_images/', null=True, blank=True)
 
     def __str__(self):
         return self.name
