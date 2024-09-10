@@ -1,7 +1,7 @@
 {% extends "master.html" %}
 
 {% block title %}
-  Add disc
+  Add disc - Project Discgolf
 {% endblock %}
 
 
@@ -12,7 +12,7 @@
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">{% if object %}Edit{% else %}Add Disc{% endif %}</button>
+            <button type="submit" class="btn btn-success">{% if object %}Edit{% else %}Add Disc{% endif %}</button>
         </form>
 </div>
 {% endblock %}
